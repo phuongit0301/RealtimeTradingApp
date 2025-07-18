@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, ScrollView, Alert, Dimensions } from 'react-native';
+import { View, ScrollView, Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../store';
 import { updateRealTimeData, setTimeRange, setCurrencyPair } from '../store/tradingSlice';
@@ -12,13 +12,11 @@ import OrderBook from '../components/OrderBook';
 import Trades from '../components/Trades';
 import OpenOrders from '../components/OpenOrders';
 import CurrencySelector from '../components/CurrencySelector';
-
-const { width } = Dimensions.get('screen');
+import styles from './styles';
 
 const TradingScreen: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const {
-    metrics,
     priceData,
     chartData,
     orderBook,
@@ -106,38 +104,5 @@ const TradingScreen: React.FC = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#0f172a',
-  },
-  scrollView: {
-    flex: 1,
-  },
-  topSection: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    flex: 1,
-    paddingVertical: 8,
-  },
-  middleSection: {
-    flexDirection: 'row',
-  },
-  chartContainer: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  chartInfoContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    paddingHorizontal: 16,
-  },
-  columns: {
-    display: 'flex',
-    flexDirection: 'column',
-  }
-});
 
 export default TradingScreen; 

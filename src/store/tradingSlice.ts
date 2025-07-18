@@ -16,32 +16,32 @@ const generateChartData = (timeRange: TimeRange, basePrice: number): ChartDataPo
 
   switch (timeRange) {
     case '7D':
-      dataPoints = 18; // 7 ngày / 18 điểm ≈ 9.33 giờ
+      dataPoints = 18; // 7 days / 18 points ≈ 9.33 hours
       interval = 9.33 * 60 * 60 * 1000;
       break;
 
     case '1M':
-      dataPoints = 30; // 30 ngày / 30 điểm = 1 điểm/ngày
+      dataPoints = 30; // 30 days / 30 points = 1 point/day
       interval = 24 * 60 * 60 * 1000;
       break;
 
     case '3M':
-      dataPoints = 36; // 90 ngày / 36 điểm = 1 điểm mỗi 2.5 ngày
+      dataPoints = 36; // 90 days / 36 points = 1 point every 2.5 days
       interval = 2.5 * 24 * 60 * 60 * 1000;
       break;
 
     case '1Y':
-      dataPoints = 52; // 52 tuần / 52 điểm = 1 điểm mỗi tuần
+      dataPoints = 52; // 52 weeks / 52 points = 1 point every week
       interval = 7 * 24 * 60 * 60 * 1000;
       break;
 
     case '5Y':
-      dataPoints = 60; // 5 năm = 60 tháng → 1 điểm/tháng
-      interval = 30 * 24 * 60 * 60 * 1000; // 30 ngày
+      dataPoints = 60; // 5 years = 60 months → 1 point/month
+      interval = 30 * 24 * 60 * 60 * 1000; // 30 days
       break;
 
     case 'Max':
-      dataPoints = 120; // 10 năm = 120 tháng → 1 điểm/tháng
+      dataPoints = 120; // 10 years = 120 months → 1 point/month
       interval = 30 * 24 * 60 * 60 * 1000;
       break;
 
