@@ -1,4 +1,3 @@
-
 export const formatNumber = (num: number): string => {
     return num.toLocaleString('en-US', {
         minimumFractionDigits: 2,
@@ -26,4 +25,4 @@ export const formatChange = (change: number): string => {
 export const formatChangePercent = (percent: number): string => {
     const sign = percent >= 0 ? '+' : '';
     return `(${sign}${percent.toFixed(2)}%)`;
-};
+}; 
